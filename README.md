@@ -27,7 +27,7 @@ The final results will be available in the `assembly` and `annotations` director
 
 ## License
 
-Specify the license under which you want to share the code (e.g., MIT License).
+Specify the license under which you want to share the code ( GNU GENERAL PUBLIC LICENSE, Version 3).
 
 ## Contact
 
