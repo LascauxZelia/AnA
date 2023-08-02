@@ -17,8 +17,37 @@ You can create a conda environment and install them:
 
 ## Usage
 1. Your metagenomic sequencing files in FASTQ format are in a same `data` directory.
-2. Execute the pipeline by running the main script `main.sh`:
-  `bash main.sh`
+2. Customize MegaHit and Prodigal options (if needed) in the `main.sh` script:
+
+   - MegaHit options (modify in `main.sh`):
+     - `min_contig_length`: The minimum contig length to be reported. Default value is 500.
+     - `k_min`: The minimum value of k (k-mer size) for the final assembly. Default value is 21.
+     - `k_max`: The maximum value of k for the final assembly. Default value is 101.
+     - `step_size`: The step size for incrementing k during assembly. Default value is 10.
+
+   - Prodigal options (modify in `main.sh`):
+     - `min_gene_length`: The minimum gene length to be reported. Default value is 150.
+     - `metagenomic_mode`: Enable metagenomic mode for gene prediction. Default value is true.
+     - `single_stranded`: Enable single-stranded mode for gene prediction. Default value is false.
+     - `p_value`: The p-value threshold for gene prediction. Default value is 1e-5.  
+       
+3. Execute the pipeline by running the `main.sh` script:
+
+```bash
+bash main.sh \
+  -i data \
+  -o results \
+  --num-threads 8 \
+  --min-contig-len 1000 \
+  --k-min 31 \
+  --k-max 121 \
+  --step-size 20 \
+  --min-gene-len 100 \
+  --metagenomic-mode false \
+  --single-stranded true \
+  --p-value 1e-3
+```
+
 Make sure that the scripts are authorised to run. If not, run : `chmod +x assemble.sh annotate.sh main.sh`  
 
 The pipeline will perform the following steps:  
