@@ -20,7 +20,8 @@ You can create a conda environment and install them:
 2. Execute the pipeline by running the main script `main.sh`:
   `bash main.sh`
 Make sure that the scripts are authorised to run. If not, run : `chmod +x assemble.sh annotate.sh main.sh`  
-The pipeline will perform the following steps:
+
+The pipeline will perform the following steps:  
 - Assembly with SPAdes: The metagenomic sequences will be assembled to form contigs in the `assembly` directory.
 - Annotation with Prodigal: Predicted genes from the assembly will be annotated into proteins in the `.faa` and `.ffn` files in the `annotations` directory.
 
