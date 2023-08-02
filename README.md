@@ -13,7 +13,7 @@ You can create a conda environment and install them:
 
 ## Installation
 1. Clone this repository to your local system using the following command:
-   `git clone `
+   `git clone https://github.com/LascauxZelia/AnA.git`
 
 ## Usage
 1. Your metagenomic sequencing files in FASTQ format are in a same `data` directory.
