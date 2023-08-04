@@ -47,6 +47,17 @@ bash main.sh \
   --single-stranded true \
   --p-value 1e-3
 ```
+```bash
+python assemble.py \
+  -i1 data/R1_reads \
+  -i2 data/R2_reads \
+  -o results \
+  --num-threads 8 \
+  --min-contig-len 1000 \
+  --k-min 31 \
+  --k-max 121 \
+  --step-size 20
+```
 
 Make sure that the scripts are authorised to run. If not, run : `chmod +x assemble.sh annotate.sh main.sh`  
 
