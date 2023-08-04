@@ -22,7 +22,7 @@ Or you can manually create a conda environment and install the following package
 
 ## Usage
 1. Your metagenomic sequencing files in FASTQ format are in a same directory (for now, only merge files).
-   `--input_dir`, you need to put the name of your directory here. This directory must be in `AnA/`.   
+   `<input_dir>`, you need to put the name of your directory here. This directory must be in `AnA/`.   
 2. Customize MegaHit and Prodigal options (if needed) in the `main.sh` script:
 
    - MegaHit options:
