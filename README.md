@@ -11,13 +11,13 @@ Make sure to have the following software installed before running the pipeline:
 1. Clone this repository to your local system using the following command:
    `git clone https://github.com/LascauxZelia/AnA.git`
    
-2. You can directly create the AnA conda environment with this command line:
+2. You can directly create the AnA conda environment with this command line:  
 `conda env create -f env.yml`  
 And then activate the environment :  
 `conda activate AnA`  
 
-Or you can manually create a conda environment and install the following packages:
-`conda install -c bioconda megahit`
+Or you can manually create a conda environment and install the following packages:  
+`conda install -c bioconda megahit`  
 `conda install -c bioconda prodigal`
 
 ## Usage
