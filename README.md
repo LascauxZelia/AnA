@@ -37,27 +37,26 @@ Or you can manually create a conda environment and install the following package
 3. Execute the pipeline by running the `main.py` script:
 
 ```bash
-python main.py \
-  --input_dir data \
-  --cpu 15 \
-  --min_contig_len 1500 \
-  --k_min 31 \
-  --k_step 20 \
-  --m \
+python main.py <input_dir> <cpu> <min_contig_len> <kstep> <kmin>
+```
+For example: If my merged reads are in a directory called 'data' I can run the following command :
+
+```bash
+python main.py data
 ```
 
 Make sure that the scripts are authorised to run. If not, run : `chmod +x main.py`  
 
 The pipeline will perform the following steps:  
-- Assembly with Megahit: The metagenomic sequences will be assembled to form contigs in the `{seq_name}_megahit/` directory.
+- Assembly with Megahit: The metagenomic sequences will be assembled to form contigs in the `assembly/{seq_name}_megahit/` directory.
 - Annotation with Prodigal: Predicted genes from the assembly will be annotated into proteins in the `.faa` and `.ffn` files in the `annotations` directory.
 
 The final results will be available in the `assembly` and `annotations` directories.
 
 ## License
 
-Specify the license under which you want to share the code ( GNU GENERAL PUBLIC LICENSE, Version 3).
+Specify the license under which you want to share the code (GNU GENERAL PUBLIC LICENSE, Version 3).
 
 ## Contact
 
-If you have any questions or comments about the pipeline, feel free to contact me at [zelia.bontemps@imbim.uu.se](mailto:zelia.bontemps@imbim.uu.se).
+If you have any questions or comments about the pipeline (or need to add more options), feel free to contact me at [zelia.bontemps@imbim.uu.se](mailto:zelia.bontemps@imbim.uu.se).
