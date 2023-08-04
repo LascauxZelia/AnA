@@ -1,31 +1,36 @@
 # AnA
 A short metagenomic assembly pipeline and gene annotation
-This pipeline is designed to assemble raw metagenomic sequencing data using SPAdes software and then annotate the predicted genes from the assembly using Prodigal.  
+This pipeline is designed to assemble raw metagenomic sequencing data using Megahit software and then annotate the predicted genes from the assembly using Prodigal.  
 
-## Prerequisites
+## Software information
 Make sure to have the following software installed before running the pipeline:
-- SPAdes (https://cab.spbu.ru/software/spades/)
+- Megahit (https://github.com/voutcn/megahit)
 - Prodigal (https://github.com/hyattpd/Prodigal)
-
-You can create a conda environment and install them:
-`conda install SPAdes`
-`conda install prodigal`
 
 ## Installation
 1. Clone this repository to your local system using the following command:
    `git clone https://github.com/LascauxZelia/AnA.git`
+   
+2. You can directly create the AnA conda environment with this command line:
+`conda env create -f env.yml`  
+And then activate the environment :  
+`conda activate AnA`  
+
+Or you can manually create a conda environment and install the following packages:
+`conda install -c bioconda megahit`
+`conda install -c bioconda prodigal`
 
 ## Usage
-1. Your metagenomic sequencing files in FASTQ format are in a same `data` directory.
+1. Your metagenomic sequencing files in FASTQ format are in a same directory (for now, only merge files).
 2. Customize MegaHit and Prodigal options (if needed) in the `main.sh` script:
 
-   - MegaHit options (modify in `main.sh`):
+   - MegaHit options:
      - `min_contig_length`: The minimum contig length to be reported. Default value is 500.
      - `k_min`: The minimum value of k (k-mer size) for the final assembly. Default value is 21.
      - `k_max`: The maximum value of k for the final assembly. Default value is 101.
      - `step_size`: The step size for incrementing k during assembly. Default value is 10.
 
-   - Prodigal options (modify in `main.sh`):
+   - Prodigal options:
      - `min_gene_length`: The minimum gene length to be reported. Default value is 150.
      - `metagenomic_mode`: Enable metagenomic mode for gene prediction. Default value is true.
      - `single_stranded`: Enable single-stranded mode for gene prediction. Default value is false.
@@ -47,22 +52,11 @@ bash main.sh \
   --single-stranded true \
   --p-value 1e-3
 ```
-```bash
-python assemble.py \
-  -i1 data/R1_reads \
-  -i2 data/R2_reads \
-  -o results \
-  --num-threads 8 \
-  --min-contig-len 1000 \
-  --k-min 31 \
-  --k-max 121 \
-  --step-size 20
-```
 
 Make sure that the scripts are authorised to run. If not, run : `chmod +x assemble.sh annotate.sh main.sh`  
 
 The pipeline will perform the following steps:  
-- Assembly with SPAdes: The metagenomic sequences will be assembled to form contigs in the `assembly` directory.
+- Assembly with Megahit: The metagenomic sequences will be assembled to form contigs in the `assembly` directory.
 - Annotation with Prodigal: Predicted genes from the assembly will be annotated into proteins in the `.faa` and `.ffn` files in the `annotations` directory.
 
 The final results will be available in the `assembly` and `annotations` directories.
