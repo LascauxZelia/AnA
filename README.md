@@ -1,6 +1,6 @@
 # AnA
-A short automatic metagenomic Assembly aNd gene Annotation pipeline
-This pipeline is designed to assemble raw metagenomic sequencing data using Megahit software and then annotate the predicted genes from the assembly using Prodigal.  
+A short automatic metagenomic Assembly aNd gene Annotation pipeline.
+This pipeline is designed to assemble raw metagenomic sequencing data using Megahit software and then annotate the assembly using Prodigal.  
 
 ## Software information
 Make sure to have the following software installed before running the pipeline:
