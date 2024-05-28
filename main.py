@@ -48,8 +48,7 @@ for filename in os.listdir(fastq_dir):
     #Prodigal command
     output_dir_prodigal = os.path.join(annotation_dir, seq_name + '_prodigal')
     os.makedirs(output_dir_prodigal, exist_ok=True)
-    prodigal_command = prodigal_command = f"prodigal -a {seq_name}_proteins.faa -d {seq_name}_genes.fas -i {output_dir_megahit}/final.contigs.fa -m -p meta -o  {seq_n
-ame}_prodigal_output.txt "
+    prodigal_command = prodigal_command = f"prodigal -a {seq_name}_proteins.faa -d {seq_name}_genes.fas -i {output_dir_megahit}/final.contigs.fa -m -p meta -o  {seq_name}_prodigal_output.txt "
     os.system(prodigal_command)
     # Move Prodigal output files to the annotation directory
     shutil.move(f"{seq_name}_proteins.faa", os.path.join(output_dir_prodigal, f"{seq_name}_proteins.faa"))
